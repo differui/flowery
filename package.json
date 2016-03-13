@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/differui/flowery#readme",
   "dependencies": {
+    "handlebars": "^4.0.5",
     "imagemin": "^4.0.0",
+    "json2css": "^6.1.0",
     "meow": "^3.7.0",
     "spritesmith": "^3.1.0"
   }
