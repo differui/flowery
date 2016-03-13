@@ -1,0 +1,31 @@
+{
+  "name": "flowery",
+  "version": "0.0.1",
+  "description": "Generate and minify CSS sprite images.",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/differui/flowery.git"
+  },
+  "keywords": [
+    "cli",
+    "sprite"
+  ],
+  "bin": {
+    "flowery": "cli.js"
+  },
+  "author": "Bin-Rui.Guan <binrui.guan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/differui/flowery/issues"
+  },
+  "homepage": "https://github.com/differui/flowery#readme",
+  "dependencies": {
+    "imagemin": "^4.0.0",
+    "meow": "^3.7.0",
+    "spritesmith": "^3.1.0"
+  }
+}
