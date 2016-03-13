@@ -1,0 +1,11 @@
+{{#each items}}
+.icon-{{name}} {
+    width: {{px.width}};
+    height: {{px.height}};
+    background-position: {{px.offset_x}} {{px.offset_y}};
+}
+{{/each}}
+.icon {
+    background-size: {{global.px.total_width}} {{global.px.total_height}};
+    background-image: url("{{global.image}}");
+}
