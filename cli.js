@@ -212,8 +212,8 @@ function run () {
                 ruleList.push(rule);
             });
 
-            json2css.addTemplate('flowery', function (data) {
-                var tpl = fs.readFileSync('./templates/flowery.template.handlebars', 'utf8');
+            json2css.addTemplate('ruhua', function (data) {
+                var tpl = fs.readFileSync(__dirname + '/templates/ruhua.template.handlebars', 'utf8');
 
                 data.global = {
                     px: {
