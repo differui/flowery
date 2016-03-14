@@ -7,6 +7,13 @@ const handlebars = require('handlebars');
 const Imagemin = require('imagemin');
 const Spirtesmith = require('spritesmith');
 
+const errors = {
+    no_icon: `
+  Can not found any icons. Try:
+
+  $ runhua --help
+    `
+};
 const cli = meow(`
     Usage
       $ ruhua <file> <file> ... <file>
@@ -153,7 +160,7 @@ function resolveSrcPathList () {
             }
         });
 
-        recursive();
+        resolveSubSrcPathList();
     });
 }
 
@@ -161,6 +168,10 @@ function run () {
     applyDefaultConfig();
     resolveSrcPathList()
         .then(function (srcPathList) {
+            if (!srcPathList.length) {
+                throw new Error(errors.no_icon);
+            }
+
             return new Promise(function (resolve, reject) {
                 Spirtesmith.run({
                     src: srcPathList
