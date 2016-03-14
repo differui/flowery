@@ -1,6 +1,6 @@
 {
   "name": "ruhua",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate and minify CSS sprite images.",
   "main": "cli.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "bin": {
     "ruhua": "cli.js"
   },
-  "author": "Bin-Rui.Guan <binrui.guan@gmail.com>",
+  "author": "BinRui.Guan <differui@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/differui/ruhua/issues"

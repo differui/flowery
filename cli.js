@@ -9,8 +9,8 @@ const Spirtesmith = require('spritesmith');
 
 const cli = meow(`
     Usage
-      $ flowery <file> <file> ... <file>
-      $ flowery <directory> --css <output> --img <output>
+      $ ruhua <file> <file> ... <file>
+      $ ruhua <directory> --css <output> --img <output>
 
     Options
       -c, --css       Output css
@@ -20,9 +20,9 @@ const cli = meow(`
       -v, --verbose   Log error message
 
     Examples
-      $ flowery sprites/
-      $ flowery sprites/ --css dist/sprite.css --img dist/sprite.png
-      $ flowery sprites/ --ratio .5
+      $ ruhua sprites/
+      $ ruhua sprites/ --css dist/sprite.css --img dist/sprite.png
+      $ ruhua sprites/ --ratio .5
 `, {
     boolean: [
         'verbose',
@@ -39,9 +39,6 @@ const cli = meow(`
         r: 'ratio',
         R: 'recursive',
         v: 'verbose'
-    },
-    defaults: {
-        css: 'hahaha'
     }
 });
 
@@ -228,7 +225,7 @@ function run () {
 
             return new Promise(function (resolve, reject) {
                 result.css = json2css(ruleList, {
-                    format: 'flowery'
+                    format: 'ruhua'
                 });
 
                resolve(result);
