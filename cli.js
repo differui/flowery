@@ -139,9 +139,9 @@ function resolveSrcPathList () {
         var snapshotWatisList = null;
         var srcPathList = [];
 
-        function recursive () {
+        function resolveSubSrcPathList () {
             if (waitsList.length) {
-                Promise.all(waitsList.slice(0)).then(recursive);
+                Promise.all(waitsList.slice(0)).then(resolveSubSrcPathList);
                 waitsList.length = 0;
             } else {
                 resolve(srcPathList);
