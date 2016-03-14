@@ -1,6 +1,6 @@
 {
   "name": "ruhua",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Generate and minify CSS sprite images.",
   "main": "cli.js",
   "scripts": {

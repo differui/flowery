@@ -56,8 +56,8 @@ run();
  *
  */
 function applyDefaultConfig () {
-    cli.flags.img = cli.flags.img || './sprite.png';
-    cli.flags.css = cli.flags.css || './sprite.css';
+    cli.flags.img = cli.flags.img || path.resolve(process.cwd(), 'sprite.png');
+    cli.flags.css = cli.flags.css || path.resolve(process.cwd(), 'sprite.css');
     cli.flags.ratio = parseFloat(cli.flags.ratio, 10) || 1;
 }
 
@@ -131,7 +131,7 @@ function resolveSrcPathList () {
     var inputPathList = cli.input.slice(0);
 
     if (!inputPathList.length) {
-        inputPathList.push(__dirname);
+        inputPathList.push(process.cwd());
     }
 
     return new Promise(function (resolve, reject) {
@@ -221,7 +221,9 @@ function run () {
             });
 
             json2css.addTemplate('ruhua', function (data) {
-                var tpl = fs.readFileSync(__dirname + '/templates/ruhua.template.handlebars', 'utf8');
+                var tpl = fs.readFileSync(
+                    path.resolve(__dirname, 'templates', 'ruhua.template.handlebars'), 'utf8'
+                );
 
                 data.global = {
                     px: {
