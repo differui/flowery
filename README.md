@@ -33,13 +33,13 @@ Examples
   $ ruhua sprites/ --ratio .5
 ```
 
-**ruhua** will search icons in CWD if run without after arguments. Sprite stylesheet and image will be created in it if run without dest path.
+**ruhua** will search icons in CWD if run without after arguments. Stylesheet and image will be created in it if run without dest path.
 
 ```
 $ ruhua
 ```
 
-**ruhua** allows you to generate sprite image for retina device.The way is take relative CSS property multipled a ratio number.
+**ruhua** allows you to generate sprite image for retina device.The way is to take relative CSS property multipled a ratio number.
 
 ```
 $ ruhua -r 0.5 # Generate sprite image for 2X retina device
