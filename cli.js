@@ -25,11 +25,12 @@ const cli = meow(`
       -r, --ratio     CSS resize ratio (2x/0.5, 3x/0.33, 4x/0.25)
       -R, --recursive Attemp to read image recursively
       -v, --verbose   Log error message
+      -p, --pad       Add padding between images
 
     Examples
       $ ruhua sprites/
       $ ruhua sprites/ --css dist/sprite.css --img dist/sprite.png
-      $ ruhua sprites/ --ratio .5
+      $ ruhua sprites/ --ratio .5 --pad 5
 `, {
     boolean: [
         'verbose',
@@ -38,14 +39,16 @@ const cli = meow(`
     string: [
         'css',
         'img',
-        'ratio'
+        'ratio',
+        'pad'
     ],
     alias: {
         c: 'css',
         i: 'img',
         r: 'ratio',
         R: 'recursive',
-        v: 'verbose'
+        v: 'verbose',
+        p: 'pad'
     }
 });
 
@@ -174,7 +177,8 @@ function run () {
 
             return new Promise(function (resolve, reject) {
                 Spirtesmith.run({
-                    src: srcPathList
+                    src: srcPathList,
+                    padding: cli.flags.pad || 0
                 }, function (err, result) {
                     if (err) {
                         throw err;
