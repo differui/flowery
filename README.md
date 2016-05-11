@@ -26,11 +26,12 @@ Options
   -r, --ratio     CSS resize ratio (2x/0.5, 3x/0.33, 4x/0.25)
   -R, --recursive Attemp to read image recursively
   -v, --verbose   Log error message
+  -p, --pad       Add padding between images
 
 Examples
   $ ruhua sprites/
   $ ruhua sprites/ --css dist/sprite.css --img dist/sprite.png
-  $ ruhua sprites/ --ratio .5
+  $ ruhua sprites/ --ratio .5 --pad 5
 ```
 
 **ruhua** will search icons in CWD if run without after arguments. Stylesheet and image will be created in it if run without dest path.
